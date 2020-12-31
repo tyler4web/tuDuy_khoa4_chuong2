@@ -9,11 +9,11 @@ import java.util.ArrayList;
  * */
 
 public class CongTyA {
-
+	private float tongLuong;
 	
 	// 1. Attributes
 		private DanhSachNhanVien dsnvCongTyA;
-	private float luong;
+
 		//2. Get, set methods
 
 		public DanhSachNhanVien getDsnvCongTyA() {
@@ -43,9 +43,13 @@ public class CongTyA {
 		public void xuat() {
 			this.dsnvCongTyA.xuat();
 		}
-		
+//		
+//		public void xuatTongLuong() {
+//			this.dsnvCongTyA.xuatTongLuong();
+//		}
+//		
 		public void xuatTongLuong() {
-			this.dsnvCongTyA.xuatTongLuong();
+			System.out.println("Tổng lương tất cả nhân viên: " + tongLuong);
 		}
 		
 		
@@ -60,7 +64,8 @@ public class CongTyA {
 		}
 		
 		public float tinhTongLuong() {
-			return this.dsnvCongTyA.tinhTongLuong();
+			tongLuong =this.dsnvCongTyA.tinhTongLuong();
+			return tongLuong;
 		}
 	
 		

@@ -64,6 +64,7 @@ public class DanhSachNhanVien {
 	public float tinhTongLuong() {
 		float tongLuong = 0;
 		for (NhanVien nv : this.listNV) {
+			nv.tinhLuong();
 			tongLuong += nv.getLuong();
 		}
 		return tongLuong;

@@ -18,7 +18,6 @@ public class NhanVien {
 	private float luong;
 	private float heSoLuong;
 	private float luongCoBan;
-	private float tongLuong;
 
 	// 2. Get, set methods
 	public int getMaNhanVien() {
@@ -56,10 +55,10 @@ public class NhanVien {
 	public float getLuong() {
 		return luong;
 	}
-	
-	public float getTongLuong() {
-		return tongLuong;
-	}
+
+//	public float getTongLuong() {
+//		return tongLuong;
+//	}
 
 	public float getHeSoLuong() {
 		return heSoLuong;
@@ -82,32 +81,30 @@ public class NhanVien {
 	public NhanVien() {
 
 	}
-	
+
 	public NhanVien(int maNhanVien, String hoTen) {
 
 		this.maNhanVien = maNhanVien;
 		this.hoTen = hoTen;
-		
+
 	}
-	
-	public NhanVien(int maNhanVien,String hoTen, float luong) {
+
+	public NhanVien(int maNhanVien, String hoTen, float luong) {
 
 		this.maNhanVien = maNhanVien;
 		this.hoTen = hoTen;
 		this.luong = luong;
-		
+
 	}
-	
+
 	public NhanVien(int maNhanVien, float heSoLuong, float luongCoBan, float luong) {
 
 		this.maNhanVien = maNhanVien;
 		this.heSoLuong = heSoLuong;
 		this.luongCoBan = luongCoBan;
 		this.luong = luong;
-		
+
 	}
-	
-	
 
 	public NhanVien(int maNhanVien, String hoTen, String ngaySinh, String diaChi, float heSoLuong, float luongCoBan) {
 
@@ -117,7 +114,7 @@ public class NhanVien {
 		this.diaChi = diaChi;
 		this.heSoLuong = heSoLuong;
 		this.luongCoBan = luongCoBan;
-		
+
 	}
 
 //4. Input, output methods
@@ -134,27 +131,26 @@ public class NhanVien {
 		System.out.print("Nhập địa chỉ: ");
 		this.diaChi = scan.nextLine();
 
-		System.out.print("Nhập hệ số lương: ");
-		this.heSoLuong = Float.parseFloat(scan.nextLine());
+		do {
+			System.out.print("Nhập hệ số lương: ");
+			this.heSoLuong = Float.parseFloat(scan.nextLine());
+		} while (heSoLuong < 0);
+		do {
+			System.out.print("Nhập mức lương cơ bản: ");
+			this.luongCoBan = Float.parseFloat(scan.nextLine());
+		} while (luongCoBan < 0);
+	}
 
-		System.out.print("Nhập mức lương cơ bản: ");
-		this.luongCoBan = Float.parseFloat(scan.nextLine());
-	}
-	
 	public void xuat() {
-		System.out.println("Mã Nhân Viên: " + this.maNhanVien + "\t Họ Tên: " + this.hoTen + "\t Ngày Sinh: " + this.ngaySinh
-				+ "\t Địa Chỉ: " + this.diaChi + "\t Hệ Số Lương: " + this.heSoLuong + "\t Lương Căn bản: " + this.luongCoBan + "\t Lương:"
-				+ this.luong);
+		System.out.println("Mã Nhân Viên: " + this.maNhanVien + "\t Họ Tên: " + this.hoTen + "\t Ngày Sinh: "
+				+ this.ngaySinh + "\t Địa Chỉ: " + this.diaChi + "\t Hệ Số Lương: " + this.heSoLuong
+				+ "\t Lương Căn bản: " + this.luongCoBan + "\t Lương:" + this.luong);
 	}
-	
-	public void xuatTongLuong(float tongLuong) {
-		System.out.println("Tổng lương nhân viên: " + this.tongLuong);
-	}
+
 //5. Business method
-	
+
 	public void tinhLuong() {
 		this.luong = this.heSoLuong * this.luongCoBan;
 	}
-	
 
 }

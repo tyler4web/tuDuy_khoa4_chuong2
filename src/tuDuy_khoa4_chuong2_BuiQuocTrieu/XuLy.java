@@ -44,7 +44,7 @@ public class XuLy {
 				cty.xuat();
 				break;
 			case 3:
-				cty.tinhLuong();
+//				cty.tinhLuong();
 				cty.tinhTongLuong();
 				cty.xuatTongLuong();
 				break;
